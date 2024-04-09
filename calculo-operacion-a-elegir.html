@@ -9,81 +9,78 @@
 	</head>
 	<body>
 		<fieldset>
-      <legend>¿Que operación desea realizar?</legend>
-    
-      <div>
-        <input type="radio" id="sumar" name="calculo" value="sumar" />
-        <label for="sumar">Sumar</label>
-      </div>
-    
-      <div>
-        <input type="radio" id="restar" name="calculo" value="restar" />
-        <label for="sumar">Restar</label>
-      </div>
+			<legend>¿Que operación desea realizar?</legend>
 
-      <button onclick="ejecutarCalculo()">Calcular</button>
+			<div>
+				<input type="radio" id="sumar" name="calculo" value="sumar" />
+				<label for="sumar">Sumar</label>
+			</div>
 
-      <div id="resultado"></div>
-    </fieldset>
+			<div>
+				<input type="radio" id="restar" name="calculo" value="restar" />
+				<label for="sumar">Restar</label>
+			</div>
 
+			<button onclick="ejecutarCalculo()">Calcular</button>
 
-    <script>
+			<div id="resultado"></div>
+		</fieldset>
 
-      function sumar(numero1, numero2) {
-        return parseInt(numero1) + parseInt(numero2)
-      }
+		<script>
+			function sumar(numero1, numero2) {
+				return parseInt(numero1) + parseInt(numero2);
+			}
 
-      function restar(numero1, numero2) {
-        return parseInt(numero1) - parseInt(numero2)
-      }
+			function restar(numero1, numero2) {
+				return parseInt(numero1) - parseInt(numero2);
+			}
 
-      // Este es el código para hacerlo con un return
+			// Este es el código para hacerlo con un return
 
-      // function ejecutarCalculo() {
-      //   let numero1 = prompt("Ingresa el primer número");
-      //   let numero2 = prompt("Ingresa el segundo número");
+			// function ejecutarCalculo() {
+			//   let numero1 = prompt("Ingresa el primer número");
+			//   let numero2 = prompt("Ingresa el segundo número");
 
-      //   let operacion = document.querySelector('input[name="calculo"]:checked').value;
+			//   let operacion = document.querySelector('input[name="calculo"]:checked').value;
 
-      //   let resultado;
+			//   let resultado;
 
-      //   if (operacion === 'sumar') {
-      //     resultado = sumar(numero1, numero2)
-      //   } else if (operacion === 'restar') {
-      //     resultado = restar(numero1, numero2)
-      //   }
+			//   if (operacion === 'sumar') {
+			//     resultado = sumar(numero1, numero2)
+			//   } else if (operacion === 'restar') {
+			//     resultado = restar(numero1, numero2)
+			//   }
 
-      //   mostrarResultado(resultado)
+			//   mostrarResultado(resultado)
 
-      // }
+			// }
 
-      // function mostrarResultado(resultado) {
-      //   let resultadoDiv = document.getElementById("resultado");
-      //   resultadoDiv.textContent = "El resultado es: " + resultado;
-      // }
+			// function mostrarResultado(resultado) {
+			//   let resultadoDiv = document.getElementById("resultado");
+			//   resultadoDiv.textContent = "El resultado es: " + resultado;
+			// }
 
-      // Este es el código para hacerlo sin un return
+			// Este es el código para hacerlo sin un return
 
-      function ejecutarCalculo() {
-        let numero1 = prompt("Ingresa el primer número");
-        let numero2 = prompt("Ingresa el segundo número");
+			function ejecutarCalculo() {
+				let numero1 = prompt("Ingresa el primer número");
+				let numero2 = prompt("Ingresa el segundo número");
 
-        let operacion = document.querySelector('input[name="calculo"]:checked').value;
+				let operacion = document.querySelector(
+					'input[name="calculo"]:checked'
+				).value;
 
-        let resultado;
+				let resultado;
 
-        if (operacion === 'sumar') {
-          resultado = sumar(numero1, numero2)
-        } else if (operacion === 'restar') {
-          resultado = restar(numero1, numero2)
-        }
+				if (operacion === "sumar") {
+					resultado = sumar(numero1, numero2);
+				} else if (operacion === "restar") {
+					resultado = restar(numero1, numero2);
+				}
 
-        let resultadoDiv = document.getElementById("resultado");
-        resultadoDiv.textContent = "El resultado es: " + resultado;
-        
-
-      }
-
-    </script>
+				let resultadoDiv = document.getElementById("resultado");
+				resultadoDiv.textContent = "El resultado es: " + resultado;
+			}
+		</script>
 	</body>
 </html>
