@@ -1,0 +1,59 @@
+<!-- Dentro de un bucle, ejecutar x veces (x según usuario) una función que te pida saludo (“Hola”, “Adiós”, etc) y nombre (“Marga”, “Carol”, etc ) , y al final te muestre los resultados en pantalla: Hola Marga, Adiós Carol (líneas separadas) -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Frase Saludo Iterario</title>
+	</head>
+	<body>
+		<h1>Saludos</h1>
+		<label for="veces">Indica cuantas veces quieres repetir el saludo:</label>
+		<input type="number" id="veces" />
+		<button onclick="ejecutarLoop()">Saludar!</button>
+		<div id="saludos"></div>
+
+		<script>
+			// Esta función es para la captura de datos de parte del usuario.
+
+			function saludar() {
+				let saludo = prompt("Ingrese su saludo (Hola, Adiós, etc):");
+				let nombre = prompt("Ingrese un nombre:");
+
+				return saludo + " " + nombre;
+			}
+
+			// Esta función agarra el número de veces que indicó el usuario, agarra los valores de las variables anteriores, y las pone en un array vacío, que luego se pone en un loop.
+
+			function ejecutarLoop() {
+				let vecesInput = document.getElementById("veces");
+				let veces = parseInt(vecesInput.value);
+				let saludos = [];
+
+				for (let i = 0; i < veces; i++) {
+					saludos.push(saludar());
+				}
+
+				mostrarSaludos(saludos);
+			}
+
+			// Finalmente esta función coloca los input del usuario en el DOM, en el último div con el ID de saludos.
+
+			function mostrarSaludos(saludos) {
+				let saludosDiv = document.getElementById("saludos");
+				saludosDiv.innerHTML = "";
+
+				if (Array.isArray(saludos)) {
+					saludos.forEach(function (resultado) {
+						let p = document.createElement("p");
+						p.textContent = resultado;
+						saludosDiv.appendChild(p);
+					});
+				} else {
+					saludosDiv.textContent = "No hay resultados para mostrar.";
+				}
+			}
+		</script>
+	</body>
+</html>
