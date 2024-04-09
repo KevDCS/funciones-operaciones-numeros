@@ -1,0 +1,65 @@
+<!-- Pide dos números. Pide si quiere sumar o restar (+/-). Según el caso, llama a la función sumar() o restar() pasándole esos parametros y muestra el resultado de sumar o restar ambos números. Prueba a realizar esto sin return. -->
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Calculo operación a elegir</title>
+	</head>
+	<body>
+		<fieldset>
+      <legend>¿Que operación desea realizar?</legend>
+    
+      <div>
+        <input type="radio" id="sumar" name="calculo" value="sumar" />
+        <label for="sumar">Sumar</label>
+      </div>
+    
+      <div>
+        <input type="radio" id="restar" name="calculo" value="restar" />
+        <label for="sumar">Restar</label>
+      </div>
+
+      <button onclick="ejecutarCalculo()">Calcular</button>
+
+      <div id="resultado"></div>
+    </fieldset>
+
+
+    <script>
+
+      function sumar(numero1, numero2) {
+        return parseInt(numero1) + parseInt(numero2)
+      }
+
+      function restar(numero1, numero2) {
+        return parseInt(numero1) - parseInt(numero2)
+      }
+
+      function ejecutarCalculo() {
+        let numero1 = prompt("Ingresa el primer número");
+        let numero2 = prompt("Ingresa el segundo número");
+
+        let operacion = document.querySelector('input[name="calculo"]:checked').value;
+
+        let resultado;
+
+        if (operacion === 'sumar') {
+          resultado = sumar(numero1, numero2)
+        } else if (operacion === 'restar') {
+          resultado = restar(numero1, numero2)
+        }
+
+        mostrarResultado(resultado)
+
+      }
+
+      function mostrarResultado(resultado) {
+        let resultadoDiv = document.getElementById("resultado");
+        resultadoDiv.textContent = "El resultado es: " + resultado;
+      }
+
+    </script>
+	</body>
+</html>
