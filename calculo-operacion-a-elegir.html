@@ -37,6 +37,33 @@
         return parseInt(numero1) - parseInt(numero2)
       }
 
+      // Este es el código para hacerlo con un return
+
+      // function ejecutarCalculo() {
+      //   let numero1 = prompt("Ingresa el primer número");
+      //   let numero2 = prompt("Ingresa el segundo número");
+
+      //   let operacion = document.querySelector('input[name="calculo"]:checked').value;
+
+      //   let resultado;
+
+      //   if (operacion === 'sumar') {
+      //     resultado = sumar(numero1, numero2)
+      //   } else if (operacion === 'restar') {
+      //     resultado = restar(numero1, numero2)
+      //   }
+
+      //   mostrarResultado(resultado)
+
+      // }
+
+      // function mostrarResultado(resultado) {
+      //   let resultadoDiv = document.getElementById("resultado");
+      //   resultadoDiv.textContent = "El resultado es: " + resultado;
+      // }
+
+      // Este es el código para hacerlo sin un return
+
       function ejecutarCalculo() {
         let numero1 = prompt("Ingresa el primer número");
         let numero2 = prompt("Ingresa el segundo número");
@@ -51,13 +78,10 @@
           resultado = restar(numero1, numero2)
         }
 
-        mostrarResultado(resultado)
-
-      }
-
-      function mostrarResultado(resultado) {
         let resultadoDiv = document.getElementById("resultado");
         resultadoDiv.textContent = "El resultado es: " + resultado;
+        
+
       }
 
     </script>
